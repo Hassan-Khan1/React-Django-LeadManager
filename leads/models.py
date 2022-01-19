@@ -3,7 +3,7 @@ from pyexpat import model
 from venv import create
 from django.db import models
 from django.forms import CharField
-
+from django.contrib.auth.models import User 
 # Create your models here.
 
 
@@ -13,3 +13,5 @@ class Lead(models.Model):
   message = models.CharField(max_length=500, blank=True,null= True)
   updated_at = models.DateTimeField(auto_now=True)
   created_at = models.DateTimeField(auto_now_add=True)
+
+  owner = models.ForeignKey(User,related_name='leads',on_delete=models.CASCADE,null=True)

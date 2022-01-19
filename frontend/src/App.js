@@ -1,8 +1,17 @@
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LoginPage from './components/Login';
-
+import Books from './components/Login/books';
 function App() {
+
+  const [token, setToken] =  useState('');
+  const userLogin = (token) => {
+    setToken(token); 
+    console.log('Token..',token);
+  }
+
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -19,7 +28,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <LoginPage />
+      <LoginPage  userLogin = { userLogin } />
+      <Books token={ token } />
     </div>
   );
 }

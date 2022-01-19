@@ -18,7 +18,7 @@ class LoginPage extends Component {
       data => {
         console.log(data.token)
 
-        // this.props.userLogin(data.token);
+        this.props.userLogin(data.token);
       }
     )
     .catch( error => console.error(error))

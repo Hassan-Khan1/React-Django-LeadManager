@@ -25,7 +25,7 @@ class LoginPage extends Component {
   }
 
   register = event => {
-    fetch('http://127.0.0.1:8000/auth/', {
+    fetch('http://127.0.0.1:8000/api/users/', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(this.state.credentials)
@@ -64,7 +64,7 @@ class LoginPage extends Component {
         </label>
         <br/>
         <button onClick={this.login}>Login</button>
-        {/* <button onClick={this.register}>Register</button> */}
+        <button onClick={this.register}>Register</button>
       </div>
     );
   }

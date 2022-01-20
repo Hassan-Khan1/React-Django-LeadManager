@@ -11,7 +11,8 @@ class Books extends Component {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Token ${this.props.token}`
+        // Authorization: `Token ${this.props.token}`
+        
       },
       body: JSON.stringify(this.state.credentials)
     })
